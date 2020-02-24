@@ -4,6 +4,8 @@ lineage_soong:
 	$(hide) (\
 	echo '{'; \
 	echo '"Lineage": {'; \
+	echo '    "Uses_mtk_hardware": $(if $(filter true,$(BOARD_USES_MTK_HARDWARE)),true,false),'; \
+	echo '    "Uses_legacy_mtk_av_blob": $(if $(filter true,$(BOARD_USES_LEGACY_MTK_AV_BLOB)),true,false),'; \
 	echo '    "Has_legacy_camera_hal1": $(if $(filter true,$(TARGET_HAS_LEGACY_CAMERA_HAL1)),true,false),'; \
 	echo '    "Needs_legacy_camera_hal1_dyn_native_handle": $(if $(filter true,$(TARGET_NEEDS_LEGACY_CAMERA_HAL1_DYN_NATIVE_HANDLE)),true,false),'; \
 	echo '    "Needs_text_relocations": $(if $(filter true,$(TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS)),true,false),'; \
