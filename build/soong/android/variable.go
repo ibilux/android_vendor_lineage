@@ -1,5 +1,11 @@
 package android
 type Product_variables struct {
+	uses_mtk_hardware struct {
+		Cppflags []string
+	}
+	uses_legacy_mtk_av_blob struct {
+		Cppflags []string
+	}
 	Has_legacy_camera_hal1 struct {
 		Cflags []string
 	}
@@ -28,6 +34,8 @@ type Product_variables struct {
 }
 
 type ProductVariables struct {
+	Uses_mtk_hardware  *bool `json:",omitempty"`
+	Uses_legacy_mtk_av_blob  *bool `json:",omitempty"`
 	Has_legacy_camera_hal1  *bool `json:",omitempty"`
 	Needs_legacy_camera_hal1_dyn_native_handle  *bool `json:",omitempty"`
 	Needs_text_relocations  *bool `json:",omitempty"`
